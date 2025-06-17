@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   output: "export",
   reactStrictMode: true,
   basePath: "/website2026",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
