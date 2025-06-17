@@ -6,7 +6,7 @@ import { LuExternalLink } from "react-icons/lu";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-2 sm:gap-4 h-screen w-full items-center justify-center p-4 lg:p-8">
+    <div className="flex flex-col gap-2 sm:gap-4 h-screen w-full items-center justify-center p-4 lg:p-8 select-none">
       <Image
         src="/wildhacks-logo-no-padding.svg"
         alt="WildHacks 2025 logo"
