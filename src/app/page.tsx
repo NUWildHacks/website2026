@@ -7,14 +7,11 @@ import WildHacksLogo from '../../public/wildhacks-no-bg.png';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-2 sm:gap-4 h-screen w-full items-center justify-center p-4 lg:p-8 select-none">
+    <div className="flex flex-col gap-2 sm:gap-4 h-screen w-full items-center justify-center p-4 lg:p-8">
       <Image
         src={WildHacksLogo}
         alt="WildHacks 2025 logo"
         className="w-24 sm:w-[100px] h-auto"
-        // width={100}
-        // height={100}
-        // className="w-24 h-24 sm:w-[100px] sm:h-[100px] select-none"
       />
       <p className="opacity-80 text-sm sm:text-base text-center">
         Northwestern&apos;s largest hackathon <br /> WildHacks 2026 coming soon...
