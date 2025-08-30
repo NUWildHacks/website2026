@@ -2,12 +2,48 @@
 
 import Countdown from "../components/Countdown";
 import Image from "next/image";
-import { LuExternalLink } from "react-icons/lu";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
+import { EmailInput } from "@/components/EmailInput";
+import { toast } from "sonner";
 
 export default function Home() {
+  const handleSubmit = async (email: string) => {
+    const response = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+
+
+    if (response.ok) {
+      toast.success("Subscribed to newsletter!", {
+        position: "top-center",
+        style: {
+          backgroundColor: "var(--success-background)",
+          color: "var(--success)",
+        },
+      });
+    } else if (response.status === 409) {
+      toast.warning("You are already subscribed to our newsletter!", {
+        position: "top-center",
+        style: {
+          backgroundColor: "var(--warning-background)",
+          color: "var(--warning)",
+        },
+      });
+    } else {
+      console.error("Failed to subscribe to newsletter:", response.statusText);
+      toast.error("Failed to subscribe to newsletter!", {
+        position: "top-center",
+        style: {
+          backgroundColor: "var(--error-background)",
+          color: "var(--error)",
+        },
+      });
+    }
+  };
   return (
-    <div className="flex flex-col gap-2 sm:gap-4 w-full flex-1 items-center justify-center p-4 lg:p-8">
+    <div className="flex flex-col gap-2 sm:gap-4 flex-1 items-center justify-center p-4 lg:p-8">
       <Image
         src={WildHacksLogo}
         alt="WildHacks logo"
@@ -18,14 +54,10 @@ export default function Home() {
         soon...
       </p>
       <Countdown />
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex w-full max-w-md opacity-80 items-center justify-center gap-1 text-nowrap text-sm sm:text-base hover:underline hover:underline-offset-4"
-        href="https://wildhacks-2025.devpost.com/project-gallery"
-      >
-        In the meantime, check out last year&apos;s winners <LuExternalLink />
-      </a>
+      <p className="opacity-80 text-sm sm:text-base text-center">
+        In the meantime, get updates from our newsletter!
+      </p>
+      <EmailInput onSubmit={(email) => handleSubmit(email)} />
     </div>
   );
 }
