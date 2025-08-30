@@ -5,7 +5,7 @@ const RAW_URL =
   "https://raw.githubusercontent.com/MLH/mlh-policies/main/code-of-conduct.md";
 
 export default async function Page() {
-  const res = await fetch(RAW_URL, { cache: "no-store" }); // always fresh
+  const res = await fetch(RAW_URL);
   if (!res.ok) {
     return <p>Failed to load content.</p>;
   }
