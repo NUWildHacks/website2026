@@ -1,5 +1,4 @@
 "use client";
-
 import Countdown from "../components/Countdown";
 import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
