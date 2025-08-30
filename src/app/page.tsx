@@ -1,18 +1,25 @@
 "use client";
-import Countdown from "../components/Countdown";
+import Countdown from "../components/Countdown.tsx";
 import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
-import { EmailInput } from "@/components/EmailInput";
+import { EmailInput } from "@/components/EmailInput.tsx";
 import { toast } from "sonner";
 
 export default function Home() {
   const handleSubmit = async (email: string) => {
-    const response = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
+    const response = await fetch(
+      process.env.NEXT_PUBLIC_SUPABASE_URL + "/functions/v1/insert-newsletter",
+      {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
 
+    console.log(response);
 
     if (response.ok) {
       toast.success("Subscribed to newsletter!", {
