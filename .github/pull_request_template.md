@@ -19,6 +19,6 @@ Before merging this PR, please ensure that:
 
 - The testing requirements were fully understood and met.
 - The tests were carried out as requested and all use cases are covered.
-- (If appropriate) The mobile environment of the website was checked, and no side effects were observed.
+- (If applicable) Mobile/responsive design has been tested and verified.
 - The code is clean and well-commented.
 - This PR is coherent with the scope and does not include unnecessary changes.
