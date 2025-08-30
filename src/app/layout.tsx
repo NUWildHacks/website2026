@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Footer from "@/components/Footer.tsx";
-import Header from "@/components/Header.tsx";
-import { Toaster } from "@/components/ui/sonner.tsx";
-import { ThemeProvider } from "@/components/ThemeProvider.tsx";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "WildHacks 2026",

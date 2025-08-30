@@ -1,8 +1,8 @@
 "use client";
-import Countdown from "../components/Countdown.tsx";
+import Countdown from "../components/Countdown";
 import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
-import { EmailInput } from "@/components/EmailInput.tsx";
+import { EmailInput } from "@/components/EmailInput";
 import { toast } from "sonner";
 
 export default function Home() {
