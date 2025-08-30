@@ -25,7 +25,45 @@ body {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.5;
+}
 
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--foreground);
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
 
 .countdown-item-value {
   font-size: 1.25rem;
@@ -59,4 +97,15 @@ body {
   .countdown-item-separator {
     height: 1.5rem;
   }
+}
+
+.prose>* {
+  all: revert;
+  color: var(--foreground);
+}
+
+.prose p {
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "WildHacks 2026",
@@ -17,8 +19,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="apple-mobile-web-app-title" content="WildHacks" />
       </head>
-      <body>
-        {children}
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 flex min-h-0 p-4">{children}</main>
         <a
           id="mlh-trust-badge"
           style={{
@@ -40,6 +43,7 @@ export default function RootLayout({
             style={{ width: "100%" }}
           />
         </a>
+        <Footer />
       </body>
     </html>
   );
