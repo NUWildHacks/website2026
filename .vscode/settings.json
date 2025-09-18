@@ -3,5 +3,5 @@
         "**/.git": false,
         "**/.vscode": true
     },
-    "deno.enable": true
+    "typescript.preferences.includePackageJsonAutoImports": "on"
 }

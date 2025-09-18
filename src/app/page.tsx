@@ -4,7 +4,7 @@ import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
 import { EmailInput } from "@/components/EmailInput";
 import { toast } from "sonner";
-import { createClient } from "@/utils/supabase/client";
+import { createClient } from "@supabase/supabase-js";
 
 export default function Home() {
   const handleSubmit = async (email: string) => {
