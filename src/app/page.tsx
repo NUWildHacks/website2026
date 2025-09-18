@@ -4,24 +4,47 @@ import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
 import { EmailInput } from "@/components/EmailInput";
 import { toast } from "sonner";
+import { createClient } from "@/utils/supabase/client";
 
 export default function Home() {
   const handleSubmit = async (email: string) => {
-    const response = await fetch(
-      process.env.NEXT_PUBLIC_SUPABASE_URL + "/functions/v1/insert-newsletter",
-      {
-        method: "POST",
-        headers: {
-          Authorization: "Bearer " + process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
+    try {
+      const supabase = createClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      );
+
+      const normalizedEmail = email.trim().toLowerCase();
+
+      const { data: existing, error: lookupError } = await supabase
+        .from("newsletter")
+        .select("id")
+        .eq("email", normalizedEmail)
+        .maybeSingle();
+
+      if (lookupError) {
+        throw lookupError;
       }
-    );
 
-    console.log(response);
+      if (existing) {
+        toast.warning("You are already subscribed to our newsletter!", {
+          position: "top-center",
+          style: {
+            backgroundColor: "var(--warning-background)",
+            color: "var(--warning)",
+          },
+        });
+        return;
+      }
 
-    if (response.ok) {
+      const { error: insertError } = await supabase
+        .from("newsletter")
+        .insert([{ email: normalizedEmail }]);
+
+      if (insertError) {
+        throw insertError;
+      }
+
       toast.success("Subscribed to newsletter!", {
         position: "top-center",
         style: {
@@ -29,16 +52,8 @@ export default function Home() {
           color: "var(--success)",
         },
       });
-    } else if (response.status === 409) {
-      toast.warning("You are already subscribed to our newsletter!", {
-        position: "top-center",
-        style: {
-          backgroundColor: "var(--warning-background)",
-          color: "var(--warning)",
-        },
-      });
-    } else {
-      console.error("Failed to subscribe to newsletter:", response.statusText);
+    } catch (error) {
+      console.error("Subscription error:", error);
       toast.error("Failed to subscribe to newsletter!", {
         position: "top-center",
         style: {
