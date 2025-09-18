@@ -4,46 +4,65 @@ import Image from "next/image";
 import WildHacksLogo from "../../public/wildhacks-no-bg.png";
 import { EmailInput } from "@/components/EmailInput";
 import { toast } from "sonner";
-import { createClient } from "@supabase/supabase-js";
+
 
 export default function Home() {
   const handleSubmit = async (email: string) => {
     try {
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL!,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-      );
+      // const supabase = await createClient();
 
-      const normalizedEmail = email.trim().toLowerCase();
+      // const normalizedEmail = email.trim().toLowerCase();
 
-      const { data: existing, error: lookupError } = await supabase
-        .from("newsletter")
-        .select("id")
-        .eq("email", normalizedEmail)
-        .maybeSingle();
+      // const { data: existing, error: lookupError } = await supabase
+      //   .from("newsletter")
+      //   .select("id")
+      //   .eq("email", normalizedEmail)
+      //   .maybeSingle();
 
-      if (lookupError) {
-        throw lookupError;
+      // if (lookupError) {
+      //   throw lookupError;
+      // }
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        if (response.status === 409) {
+          toast.warning("You are already subscribed to our newsletter!", {
+            position: "top-center",
+            style: {
+              backgroundColor: "var(--warning-background)",
+              color: "var(--warning)",
+            },
+          });
+          return;
+        }
+        throw new Error(data.error);
       }
 
-      if (existing) {
-        toast.warning("You are already subscribed to our newsletter!", {
-          position: "top-center",
-          style: {
-            backgroundColor: "var(--warning-background)",
-            color: "var(--warning)",
-          },
-        });
-        return;
-      }
+      // if (existing) {
+      //   toast.warning("You are already subscribed to our newsletter!", {
+      //     position: "top-center",
+      //     style: {
+      //       backgroundColor: "var(--warning-background)",
+      //       color: "var(--warning)",
+      //     },
+      //   });
+      //   return;
+      // }
 
-      const { error: insertError } = await supabase
-        .from("newsletter")
-        .insert([{ email: normalizedEmail }]);
+      // const { error: insertError } = await supabase
+      //   .from("newsletter")
+      //   .insert([{ email: normalizedEmail }]);
 
-      if (insertError) {
-        throw insertError;
-      }
+      // if (insertError) {
+      //   throw insertError;
+      // }
 
       toast.success("Subscribed to newsletter!", {
         position: "top-center",
