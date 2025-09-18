@@ -12,8 +12,6 @@ export function EmailInput({
   onSubmit,
   submitButtonText = "Subscribe",
 }: EmailInputProps) {
-  // const [email, setEmail] = useState("");
-
   return (
     <>
       <Formik
@@ -30,7 +28,6 @@ export function EmailInput({
           return errors;
         }}
         onSubmit={(values, { setSubmitting }) => {
-          console.log(values);
           setTimeout(() => {
             onSubmit(values.email);
             setSubmitting(false);
@@ -67,8 +64,7 @@ export function EmailInput({
             <Button
               type="submit"
               variant="outline"
-              disabled={isSubmitting}
-              // onClick={() => onSubmit(values.email)}
+              isLoading={isSubmitting}
             >
               {submitButtonText}
             </Button>
