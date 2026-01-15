@@ -1,0 +1,16 @@
+import { useRef } from 'react';
+import styles from './HeroContent.module.scss';
+
+function HeroContent() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  return (
+    <div className={styles.hero} ref={sectionRef}>
+      <div ref={contentRef}>
+        <h1 className={styles.hero__heading}>LOREM IPSUM DOLOR</h1>
+      </div>
+    </div>
+  );
+}
+
+export default HeroContent;

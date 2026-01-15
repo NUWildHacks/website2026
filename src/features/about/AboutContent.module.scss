@@ -1,0 +1,26 @@
+.about {
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  height: 100svh;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+  &__text {
+    text-align: center;
+    font-size: 3.2rem;
+    color: white;
+    text-transform: uppercase;
+  }
+}
