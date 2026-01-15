@@ -1,0 +1,17 @@
+.hero {
+  display: flex;
+  align-items: center;
+  top: 0;
+  flex-direction: column;
+  height: 100svh;
+  justify-content: center;
+  left: 0;
+  perspective: 2000px;
+  position: relative;
+  width: 100%;
+  &__heading {
+    font-size: 5rem;
+    color: white;
+    text-transform: uppercase;
+  }
+}

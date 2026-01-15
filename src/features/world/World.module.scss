@@ -1,0 +1,25 @@
+.world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+
+  &__mover {
+    width: 100%;
+    will-change: transform;
+    background-color: #128684;
+
+    & > img {
+      width: 100%;
+      height: auto;
+      display: block;
+      will-change: transform;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
