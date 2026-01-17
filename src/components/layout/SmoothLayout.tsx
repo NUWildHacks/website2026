@@ -36,14 +36,14 @@ export const SmoothLayout = (
 
     ScrollTrigger.create({
       onUpdate: (self) => {
-        let velocity = self.getVelocity() / 750;
+        let velocity = self.getVelocity() / 1700;
         velocity = gsap.utils.clamp(-7, 7, velocity);
         skewTo(velocity);
       },
     });
 
     gsap.set(skewRef.current, {
-      transformOrigin: 'center center',
+      transformOrigin: 'left center',
       force3D: true,
     });
   }, { scope: wrapperRef });
