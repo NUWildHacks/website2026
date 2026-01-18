@@ -36,7 +36,7 @@ export const SmoothLayout = (
 
     ScrollTrigger.create({
       onUpdate: (self) => {
-        let velocity = self.getVelocity() / 1700;
+        let velocity = self.getVelocity() / 1500;
         velocity = gsap.utils.clamp(-7, 7, velocity);
         skewTo(velocity);
       },

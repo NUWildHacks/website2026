@@ -1,55 +1,45 @@
-import clock from '@/assets/main_foreground.png';
-// import bg from '@/assets/middle_bg.png';
-import gsap from 'gsap';
-// import { OrthographicCamera } from '@react-three/drei';
-// import { Canvas } from '@react-three/fiber';
 import { useGSAP } from '@gsap/react';
+import { OrthographicCamera } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import gsap from 'gsap';
 import { useRef } from 'react';
 import styles from './HeroScene.module.scss';
+import HeroSceneContent from './HeroSceneContent';
+
 function HeroScene() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLDivElement>(null);
-  const clockRef = useRef<HTMLImageElement>(null);
-  // const bgRef = useRef<HTMLImageElement>(null);
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: container.current,
+        trigger: heroRef.current,
         start: 'top top',
-        end: 'bottom bottom',
+        end: 'bottom top',
         scrub: true,
       },
     });
-    tl.to(clockRef.current, {
-      y: '-210vh',
+
+    tl.to(heroRef.current, {
+      yPercent: -20,
       ease: 'none',
     }, 0);
-  }, { scope: container });
+  });
 
   return (
-    <div className={styles.hero} ref={container}>
-      <img className={styles.hero__clock} src={clock} ref={clockRef} />
-      {
-        // <img className={styles.hero__bg} src={bg} ref={bgRef} />
-        // <img className={styles.hero__clock} src={clock} />
-        // <img className={styles.hero__bg} src={fg} />
-        // <Canvas gl={{ antialias: false }}>
-        //   <OrthographicCamera
-        //     makeDefault
-        //     left={-1}
-        //     right={1}
-        //     top={1}
-        //     bottom={-1}
-        //     near={0}
-        //     far={1} />
-
-        //   <mesh>
-        //     <planeGeometry />
-        //     <shaderMaterial
-        //       transparent={true}
-        //       uniforms={{}} />
-        //   </mesh>
-        // </Canvas>
-      }
+    <div className={styles.hero} ref={heroRef}>
+      <div className={styles.hero__clock} ref={container}>
+        <Canvas gl={{ antialias: false }}>
+          <OrthographicCamera
+            makeDefault
+            left={-1}
+            right={1}
+            top={1}
+            bottom={-1}
+            near={0}
+            far={1} />
+          <HeroSceneContent scrollContainer={heroRef} />
+        </Canvas>
+      </div>
     </div>
   );
 }

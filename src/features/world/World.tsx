@@ -1,5 +1,5 @@
 import clockBg from '@/assets/clock_bg.png';
-import cloudBg from '@/assets/middle_bg.png';
+import cloudBg from '@/assets/cloud_bg.webp';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
