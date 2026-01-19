@@ -1,18 +1,52 @@
+@use '@/styles/variables' as _;
+
 .hero {
   display: flex;
   align-items: center;
   top: 0;
   flex-direction: column;
-  height: 100svh;
+  height: 90svh;
   justify-content: center;
   left: 0;
   perspective: 2000px;
   position: relative;
   width: 100%;
+
+  /* font-size: 18px; */
+  font-family: _.$font-sans;
+  color: white;
+  /* text-transform: uppercase; */
+
   &__logo {
     width: 70vw;
     max-width: 800px;
     color: white;
-    text-transform: uppercase;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &__mlh {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+
+    img {
+      width: 3em;
+      height: auto;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
   }
 }

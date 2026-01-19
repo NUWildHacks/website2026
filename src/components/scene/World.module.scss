@@ -1,3 +1,5 @@
+@use '@/styles/variables' as _;
+
 .world {
   position: absolute;
   top: 0;
@@ -11,15 +13,18 @@
   &__mover {
     width: 100%;
     will-change: transform;
-    background-color: #128684;
+    background-color: _.$clr-bg-base;
 
     & > img {
       width: 100%;
-      height: auto;
       display: block;
       will-change: transform;
       min-height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__cloudBg {
+    height: 450svh;
   }
 }

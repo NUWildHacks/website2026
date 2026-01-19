@@ -27,7 +27,7 @@ export const World = () => {
   return (
     <div className={styles.world} ref={worldRef}>
       <div className={styles.world__mover} ref={moverRef}>
-        <img src={cloudBg} ref={cloudsRef} />
+        <img src={cloudBg} ref={cloudsRef} className={styles.world__cloudBg} />
         <div style={{ backgroundColor: '#128684', height: '250svh' }} />
         <img src={clockBg} ref={clockRef} />
       </div>

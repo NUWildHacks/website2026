@@ -21,7 +21,7 @@ function AboutContent() {
       },
     }).from(split.current.words, {
       opacity: 0.2,
-      stagger: 0.1,
+      stagger: 0.2,
       ease: 'none',
     });
   }, [containerRef, textRef]);
