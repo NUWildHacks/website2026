@@ -1,5 +1,6 @@
 @use 'preflight';
 @use 'variables' as _;
+@use 'mixins';
 
 ::-webkit-scrollbar {
   display: none;

@@ -20,3 +20,11 @@ $font-sans: 'Instrument Sans', $fallback-fonts, sans-serif;
 $clr-bg-base: #128684;
 $clr-button-dark: #ca8f44;
 $clr-button-light: #f8d96c;
+
+// breakpoints
+
+$xsBreakpoint: 576px;
+$smBreakpoint: 768px;
+$mdBreakpoint: 1024px;
+$lgBreakpoint: 1290px;
+$xlBreakpoint: 1440px;

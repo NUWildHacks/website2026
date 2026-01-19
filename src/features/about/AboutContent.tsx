@@ -30,8 +30,9 @@ function AboutContent() {
     <div className={styles.about} ref={containerRef}>
       <div className={styles.about__background}>
         <p className={styles.about__text} ref={textRef}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
+          consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
+          quisque faucibus ex.
         </p>
       </div>
     </div>

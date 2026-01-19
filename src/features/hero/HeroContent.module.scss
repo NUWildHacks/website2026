@@ -1,4 +1,5 @@
 @use '@/styles/variables' as _;
+@use '@/styles/mixins';
 
 .hero {
   display: flex;
@@ -12,20 +13,21 @@
   position: relative;
   width: 100%;
 
-  /* font-size: 18px; */
   font-family: _.$font-sans;
   color: white;
-  /* text-transform: uppercase; */
 
   &__logo {
-    width: 70vw;
+    width: 90vw;
     max-width: 800px;
     color: white;
     pointer-events: none;
-
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    @include mixins.sm-breakpoint {
+      width: 70vw;
+    }
   }
 
   &__mlh {
@@ -41,7 +43,13 @@
 
   &__subtitle {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 15px;
+
+    @include mixins.sm-breakpoint {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     &__meta {
       display: flex;
