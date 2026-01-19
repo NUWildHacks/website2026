@@ -22,7 +22,7 @@ export const World = () => {
         scrub: true,
       },
     });
-  }, { scope: worldRef });
+  }, [worldRef, moverRef]);
 
   return (
     <div className={styles.world} ref={worldRef}>

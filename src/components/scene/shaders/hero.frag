@@ -4,7 +4,6 @@ uniform sampler2D texture2;
 uniform sampler2D displacement;
 uniform float disRepeat;
 varying vec2 vUv;
-varying vec4 vPosition;
 
 vec2 mirrored(vec2 v) {
   vec2 m = mod(v, 2.);

@@ -6,29 +6,35 @@ import { useAspect, useTexture } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import gsap from 'gsap';
 import { useMemo, useRef } from 'react';
-import { type ShaderMaterial } from 'three';
+import { Mesh, ShaderMaterial } from 'three';
 import fragmentShader from './shaders/hero.frag';
 import vertexShader from './shaders/hero.vert';
 
-type HeroSceneContentProps = {
+type ClockProps = {
   scrollContainer: React.RefObject<HTMLDivElement | null>;
 };
 
-export default function HeroSceneContent(
-  { scrollContainer }: HeroSceneContentProps,
-) {
+const Clock = (
+  { scrollContainer }: ClockProps,
+) => {
   const materialRef = useRef<ShaderMaterial>(null);
+  const meshRef = useRef<Mesh>(null);
+  const tl = useRef<GSAPTimeline>(null);
 
   const [tex1, tex2, disp] = useTexture([
     clockImg,
     transitionImg,
     displacementImg,
   ]);
+
   const { viewport } = useThree();
   const scale = useAspect(1439, 1290, 1);
-  const yOffset = (scale[1] - viewport.height) / 2;
+
+  const clockOffset = (viewport.height / 2) - (viewport.height * 0.375)
+    - (scale[1] / 2);
 
   const uniforms = useMemo(() => ({
+    time: { value: 0 },
     progress: { value: 0 },
     texture1: { value: tex1 },
     texture2: { value: tex2 },
@@ -37,30 +43,36 @@ export default function HeroSceneContent(
   }), [tex1, tex2, disp]);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
+    tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: scrollContainer.current,
         start: 'top top',
-        end: 'bottom -25%',
+        end: 'bottom top',
         scrub: true,
       },
-    });
-
-    tl.to(uniforms.progress, {
+    }).to(uniforms.progress, {
       value: 1,
       ease: 'none',
     });
-  }, [uniforms, scrollContainer]);
+  }, [scrollContainer, uniforms]);
 
   return (
-    <mesh scale={scale} position={[0, -yOffset, 0]}>
-      <planeGeometry />
+    <mesh
+      scale={scale}
+      renderOrder={1}
+      position={[0, clockOffset, 0]}
+      ref={meshRef}>
+      <planeGeometry args={[1, 1]} />
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
         uniforms={uniforms}
-        transparent />
+        transparent
+        depthWrite={false}
+        depthTest={true} />
     </mesh>
   );
-}
+};
+
+export default Clock;
