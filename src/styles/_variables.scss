@@ -10,12 +10,14 @@ $fallback-fonts:
   Ubuntu,
   Cantarell,
   'Open Sans',
-  'Helvetica Neue',
-  sans-serif;
+  'Helvetica Neue';
 
-$font-serif: 'Instrument Serif', $fallback-fonts;
-$font-sans: 'Instrument Sans', $fallback-fonts;
+$font-serif: 'Instrument Serif', $fallback-fonts, serif;
+$font-sans: 'Instrument Sans', $fallback-fonts, sans-serif;
+$font-mono: 'Commit Mono', $fallback-fonts, monospace;
 
 // colors
 
 $clr-bg-base: #128684;
+$clr-button-dark: #ca8f44;
+$clr-button-light: #f8d96c;

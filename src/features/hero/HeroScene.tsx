@@ -1,4 +1,5 @@
 import Clock from '@/components/scene/Clock';
+// import Clouds from '@/components/scene/Clouds';
 import { useGSAP } from '@gsap/react';
 import { Canvas } from '@react-three/fiber';
 import gsap from 'gsap';
@@ -27,7 +28,7 @@ function HeroScene() {
   return (
     <div className={styles.hero} ref={heroRef}>
       <div className={styles.hero__container} ref={containerRef}>
-        <Canvas gl={{ antialias: false }}>
+        <Canvas gl={{ antialias: false }} style={{ pointerEvents: 'none' }}>
           <Suspense fallback={null}>
             <Clock scrollContainer={heroRef} />
           </Suspense>

@@ -62,7 +62,7 @@ const Clock = (
       renderOrder={1}
       position={[0, clockOffset, 0]}
       ref={meshRef}>
-      <planeGeometry args={[1, 1]} />
+      <planeGeometry />
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
