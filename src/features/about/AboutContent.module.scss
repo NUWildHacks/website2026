@@ -1,3 +1,5 @@
+@use '@/styles/mixins';
+
 .about {
   display: flex;
   align-items: center;
@@ -20,8 +22,12 @@
   &__text {
     max-width: 1200px;
     text-align: center;
-    font-size: 54px;
     color: white;
     text-transform: uppercase;
+    font-size: 24px;
+
+    @include mixins.sm-breakpoint {
+      font-size: 54px;
+    }
   }
 }
