@@ -17,7 +17,6 @@
     "**/*.{json,scss,html}": ["dprint fmt"]
   },
   "dependencies": {
-    "@fontsource/commit-mono": "^5.2.5",
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
