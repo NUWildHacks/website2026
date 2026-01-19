@@ -25,6 +25,7 @@ export const SmoothLayout = (
       ease: 'power3.out',
       effects: true,
       normalizeScroll: true,
+      smoothTouch: true,
       wrapper: wrapperRef.current,
       content: contentRef.current,
     });

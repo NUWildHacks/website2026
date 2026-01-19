@@ -7,23 +7,24 @@ import styles from './AboutContent.module.scss';
 function AboutContent() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
+  const tl = useRef<GSAPTimeline>(null);
+  const split = useRef<SplitText>(null);
+
   useGSAP(() => {
-    const split = new SplitText(textRef.current, { type: 'words' });
-    const tl = gsap.timeline({
+    split.current = new SplitText(textRef.current, { type: 'words' });
+    tl.current = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 60%',
-        end: 'bottom 75%',
+        end: 'bottom 66%',
         scrub: true,
       },
-    });
-
-    tl.from(split.words, {
+    }).from(split.current.words, {
       opacity: 0.2,
       stagger: 0.1,
       ease: 'none',
     });
-  }, { scope: containerRef });
+  }, [containerRef, textRef]);
 
   return (
     <div className={styles.about} ref={containerRef}>

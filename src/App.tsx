@@ -19,7 +19,7 @@ function App() {
       world={<World />}
       scenes={<HeroScene />}>
       <HeroContent />
-      <Spacer height={30} />
+      <Spacer height={35} />
       <AboutContent />
       <Spacer height={200} />
       <Footer />
