@@ -1,0 +1,24 @@
+{
+  "lineWidth": 80,
+  "typescript": {
+    "quoteStyle": "preferSingle",
+    "jsx.bracketPosition": "sameLine"
+  },
+  "json": {
+  },
+  "malva": {
+    "quotes": "preferSingle"
+  },
+  "markup": {
+  },
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.95.13.wasm",
+    "https://plugins.dprint.dev/json-0.21.1.wasm",
+    "https://plugins.dprint.dev/g-plane/malva-v0.15.1.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.25.3.wasm"
+  ]
+}
