@@ -1,3 +1,6 @@
+import doordashTable from '@/assets/doordash-table.png';
+import openingCeremony from '@/assets/opening-ceremony.png';
+import wildhacks2025 from '@/assets/wildhacks-2025.gif';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -141,7 +144,7 @@ function AboutLastYear() {
             <img
               ref={imgARef}
               className={styles.image}
-              src='/src/assets/opening-ceremony.png'
+              src={openingCeremony}
               alt='' />
             <div ref={statARef} className={styles.stat__A}>
               348<br />participants
@@ -173,7 +176,7 @@ function AboutLastYear() {
             <img
               ref={imgBRef}
               className={styles.image__B}
-              src='/src/assets/doordash-table.png'
+              src={doordashTable}
               alt='' />
             <div ref={statBRef} className={styles.stat__bottomB}>
               94<br />submissions
@@ -188,7 +191,7 @@ function AboutLastYear() {
             <img
               ref={imgCRef}
               className={styles.image__C}
-              src='/src/assets/wildhacks-2025.gif'
+              src={wildhacks2025}
               alt='' />
           </div>
           <div className={styles.copyContainer__C}>
