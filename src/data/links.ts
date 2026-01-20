@@ -4,7 +4,7 @@ export const links = {
   sponsors: '#sponsors',
   faq: '#faq',
   register: {
-    participant: '#', // TODO: Update with actual registration link
+    participant: 'https://dashboard.wildhacks.net/registration', // TODO: Update with actual registration link
     judge: '#',
   },
   dashboard: 'https://dashboard.wildhacks.net/', // TODO: Update with actual dashboard link
