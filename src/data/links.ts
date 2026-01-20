@@ -4,13 +4,13 @@ export const links = {
   sponsors: '#sponsors',
   faq: '#faq',
   register: {
-    participant: 'https://dashboard.wildhacks.net/registration/', // TODO: Update with actual registration link
+    participant: 'https://dashboard.wildhacks.net/registration/',
     judge:
       'https://docs.google.com/forms/d/e/1FAIpQLScyJ4OXjGQOlXSNj-nAZzdcXA1eQWc1URs2fsVpe2dahjlzXw/viewform',
   },
-  dashboard: 'https://dashboard.wildhacks.net/', // TODO: Update with actual dashboard link
+  dashboard: 'https://dashboard.wildhacks.net/',
 
-  email: 'mailto:wildhacks@northwestern.edu',
+  email: 'mailto:wildhacks@northwestern.edu?subject=[GENERAL INQUIRY] Website',
   social: {
     linkedin: 'https://www.linkedin.com/company/wildhacks/',
     instagram: 'https://www.instagram.com/wildhacks/',

@@ -2,7 +2,11 @@ import ClockBreak from '@/assets/clock.webp';
 import { categoryMeta, type FaqCategory, faqs } from '@/data/faqs';
 import { links } from '@/data/links';
 import { useMemo, useState } from 'react';
-import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
+import {
+  FaEnvelopeSquare,
+  FaInstagramSquare,
+  FaLinkedin,
+} from 'react-icons/fa';
 import CodeOfConductModal from './CodeOfConductModal';
 import styles from './Footer.module.scss';
 import ToggleQuestion from './ToggleQuestion';
@@ -75,6 +79,13 @@ function Footer() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)} />
         <div className={styles.footer__socialContainer}>
+          <a
+            href={links.email}
+            className={styles.footer__socialButton}
+            target='_blank'
+            aria-label='Email us'>
+            <FaEnvelopeSquare size={24} />
+          </a>
           <a
             href={links.social.linkedin}
             className={styles.footer__socialButton}
