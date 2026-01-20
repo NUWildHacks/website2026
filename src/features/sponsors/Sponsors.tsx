@@ -5,7 +5,10 @@ import SponsorsBulletin from './SponsorsBulletin';
 function Sponsors() {
   return (
     <div id='sponsors' className={styles.sponsors}>
-      <img src={logoIcon} className={styles.sponsors__logo} />
+      <img
+        src={logoIcon}
+        className={styles.sponsors__logo}
+        alt='WildHacks 2026 Icon Logo' />
       <h2 className={styles.sponsors__heading}>
         Sponsors
       </h2>

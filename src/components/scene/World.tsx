@@ -28,9 +28,17 @@ export const World = () => {
   return (
     <div className={styles.world} ref={worldRef}>
       <div className={styles.world__mover} ref={moverRef}>
-        <img src={cloudBg} ref={cloudsRef} className={styles.world__cloudBg} />
+        <img
+          src={cloudBg}
+          ref={cloudsRef}
+          className={styles.world__cloudBg}
+          alt='clouds in the background' />
         <div className={styles.world__spacer} />
-        <img src={clockBg} ref={clockRef} className={styles.world__clockBg} />
+        <img
+          src={clockBg}
+          ref={clockRef}
+          className={styles.world__clockBg}
+          alt='golden clock breakpoint' />
       </div>
     </div>
   );

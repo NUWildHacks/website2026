@@ -28,7 +28,10 @@ function App() {
         <Spacer height={45} />
         <AboutContent />
         <AboutLastYear />
-        <img src={bookshelves} style={{ width: '100%', margin: '128px 0' }} />
+        <img
+          src={bookshelves}
+          style={{ width: '100%', margin: '128px 0' }}
+          alt='cat sitting on top of bookshelf' />
         <Sponsors />
         {/* <Spacer height={200} /> */}
         <Footer />

@@ -12,10 +12,13 @@ function HeroContent() {
     <div className={styles.hero} ref={sectionRef}>
       <div ref={contentRef}>
         <div className={styles.hero__mlh}>
-          <img src={mlhLogo} />
+          <img src={mlhLogo} alt='MLH logo' />
           <p>Official Member</p>
         </div>
-        <img src={logo} className={styles.hero__logo} />
+        <img
+          src={logo}
+          className={styles.hero__logo}
+          alt='WildHacks 2026 Logo' />
         <div className={styles.hero__subtitle}>
           <div className={styles.hero__subtitle__meta}>
             <span>

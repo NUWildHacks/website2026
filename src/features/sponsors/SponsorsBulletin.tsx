@@ -8,7 +8,9 @@ function SponsorsBulletin() {
   return (
     <div className={styles.sponsors}>
       <div className={styles.sponsors__left}>
-        <img src={FigureOne} />
+        <img
+          src={FigureOne}
+          alt='Illustration of a man-clock hybrid pointing towards Coming Soon card' />
       </div>
 
       <div className={styles.sponsors__card}>
@@ -34,7 +36,7 @@ function SponsorsBulletin() {
       </div>
 
       <div className={styles.sponsors__right}>
-        <img src={HourGlass} />
+        <img src={HourGlass} alt='Illustration of a bug-hourglass hybrid' />
       </div>
     </div>
   );

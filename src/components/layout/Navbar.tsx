@@ -47,8 +47,11 @@ function Navbar() {
       className={`${styles.navbar} ${
         visible ? styles['navbar--visible'] : ''
       }`}>
-      <a href='#' className={styles.navbar__logo}>
-        <img src={LogoIcon} />
+      <a
+        href='#'
+        className={styles.navbar__logo}
+        aria-label='Navigate back to top of the page'>
+        <img src={LogoIcon} alt='WildHacks 2026 Logo' />
       </a>
 
       <div className={styles.navbar__content}>

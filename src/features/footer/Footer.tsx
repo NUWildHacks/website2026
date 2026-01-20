@@ -59,7 +59,10 @@ function Footer() {
           })}
         </div>
       </div>
-      <img src={ClockBreak} style={{ width: '100%' }} />
+      <img
+        src={ClockBreak}
+        style={{ width: '100%' }}
+        alt='Golden clock breakpoint' />
 
       <div className={styles.footer__teamContainer}>
         <p>Made with &lt;3 by the WildHacks Team</p>
@@ -74,12 +77,14 @@ function Footer() {
         <div className={styles.footer__socialContainer}>
           <a
             href={links.social.linkedin}
-            className={styles.footer__socialButton}>
+            className={styles.footer__socialButton}
+            aria-label='Go to WildHacks LinkedIn Page'>
             <FaLinkedin size={24} />
           </a>
           <a
             href={links.social.instagram}
-            className={styles.footer__socialButton}>
+            className={styles.footer__socialButton}
+            aria-label='Go to WildHacks Instagram Page'>
             <FaInstagramSquare size={24} />
           </a>
         </div>

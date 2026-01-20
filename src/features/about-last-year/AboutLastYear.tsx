@@ -145,7 +145,7 @@ function AboutLastYear() {
               ref={imgARef}
               className={styles.image}
               src={openingCeremony}
-              alt='' />
+              alt='WildHacks 2025 opening ceremony' />
             <div ref={statARef} className={styles.stat__A}>
               348<br />participants
             </div>
@@ -177,7 +177,7 @@ function AboutLastYear() {
               ref={imgBRef}
               className={styles.image__B}
               src={doordashTable}
-              alt='' />
+              alt='WildHacks 2025 refreshments table' />
             <div ref={statBRef} className={styles.stat__bottomB}>
               94<br />submissions
             </div>
@@ -192,7 +192,7 @@ function AboutLastYear() {
               ref={imgCRef}
               className={styles.image__C}
               src={wildhacks2025}
-              alt='' />
+              alt='WildHacks 2025 dinner timelapse gif' />
           </div>
           <div className={styles.copyContainer__C}>
             <div ref={copyCRef} className={styles.copy}>
