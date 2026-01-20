@@ -23,12 +23,14 @@ function SponsorsBulletin() {
           <div className={styles.sponsors__buttons}>
             <Button
               className={styles.sponsors__button}
-              href={links.register.participant}>
+              href={links.register.participant}
+              target='_blank'>
               Participant
             </Button>
             <Button
               className={styles.sponsors__button}
-              href={links.register.judge}>
+              href={links.register.judge}
+              target='_blank'>
               Judge / Mentor
             </Button>
           </div>
