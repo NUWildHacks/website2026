@@ -2,6 +2,10 @@
 @use 'variables' as _;
 @use 'mixins';
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

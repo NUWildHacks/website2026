@@ -28,7 +28,7 @@ function Footer() {
   }, []);
 
   return (
-    <section className={styles.footer}>
+    <section id='faq' className={styles.footer}>
       <div className={styles.footer__container}>
         <h1 className={styles.footer__heading}>FAQs</h1>
 

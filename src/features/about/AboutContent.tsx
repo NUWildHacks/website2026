@@ -27,7 +27,7 @@ function AboutContent() {
   }, [containerRef, textRef]);
 
   return (
-    <div className={styles.about} ref={containerRef}>
+    <div id='about' className={styles.about} ref={containerRef}>
       <div className={styles.about__background}>
         <p className={styles.about__text} ref={textRef}>
           Tick… tock… time is running out to register for WildHacks,

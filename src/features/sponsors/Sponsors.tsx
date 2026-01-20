@@ -4,7 +4,7 @@ import SponsorsBulletin from './SponsorsBulletin';
 
 function Sponsors() {
   return (
-    <div className={styles.sponsors}>
+    <div id='sponsors' className={styles.sponsors}>
       <img src={logoIcon} className={styles.sponsors__logo} />
       <h2 className={styles.sponsors__heading}>
         Sponsors
