@@ -1,5 +1,7 @@
 # WildHacks 2026 Website
 
+<img width="1679" height="928" alt="Screenshot 2026-01-20 at 10 01 48" src="https://github.com/user-attachments/assets/237101d1-7f53-41e7-be32-294578c1c7db" />
+
 The official website for WildHacks 2026, Northwestern's largest hackathon.
 
 ## Development
