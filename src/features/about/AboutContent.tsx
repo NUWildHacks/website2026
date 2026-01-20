@@ -16,7 +16,7 @@ function AboutContent() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top 60%',
-        end: 'bottom 66%',
+        end: 'bottom 95%',
         scrub: true,
       },
     }).from(split.current.words, {
