@@ -5,7 +5,8 @@ export const links = {
   faq: '#faq',
   register: {
     participant: 'https://dashboard-2026.vercel.app/registration/', // TODO: Update with actual registration link
-    judge: 'https://dashboard-2026.vercel.app/registration/',
+    judge:
+      'https://docs.google.com/forms/d/e/1FAIpQLScyJ4OXjGQOlXSNj-nAZzdcXA1eQWc1URs2fsVpe2dahjlzXw/viewform',
   },
   dashboard: 'https://dashboard.wildhacks.net/', // TODO: Update with actual dashboard link
 
