@@ -1,4 +1,5 @@
 import LogoIcon from '@/assets/logo-icon.svg';
+import { links } from '@/data/links';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Navbar.module.scss';
@@ -52,33 +53,33 @@ function Navbar() {
 
       <div className={styles.navbar__content}>
         <a
-          href='#about'
+          href={links.about}
           className={styles.navbar__link}
           onClick={(e) => handleNavClick(e, '#about')}>
           About
         </a>
         <a
-          href='#sponsors'
+          href={links.sponsors}
           className={styles.navbar__link}
           onClick={(e) => handleNavClick(e, '#sponsors')}>
           Sponsors
         </a>
         <a
-          href='#faq'
+          href={links.faq}
           className={styles.navbar__link}
           onClick={(e) => handleNavClick(e, '#faq')}>
           FAQ
         </a>
 
         <a
-          href='#'
+          href={links.register.participant}
           className={styles.navbar__link}
           target='_blank'
           rel='noopener noreferrer'>
           Register
         </a>
         <a
-          href='#'
+          href={links.dashboard}
           className={styles.navbar__link}
           target='_blank'
           rel='noopener noreferrer'>

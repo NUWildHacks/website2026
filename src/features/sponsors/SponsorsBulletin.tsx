@@ -1,6 +1,7 @@
 import FigureOne from '@/assets/figure1.svg';
 import HourGlass from '@/assets/hourglass.svg';
 import Button from '@/components/ui/Button';
+import { links } from '@/data/links';
 import styles from './SponsorsBulletin.module.scss';
 
 function SponsorsBulletin() {
@@ -18,10 +19,14 @@ function SponsorsBulletin() {
             In the meantime, register as a
           </p>
           <div className={styles.sponsors__buttons}>
-            <Button className={styles.sponsors__button}>
+            <Button
+              className={styles.sponsors__button}
+              href={links.register.participant}>
               Participant
             </Button>
-            <Button className={styles.sponsors__button}>
+            <Button
+              className={styles.sponsors__button}
+              href={links.register.judge}>
               Judge / Mentor
             </Button>
           </div>

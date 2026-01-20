@@ -1,5 +1,6 @@
 import ClockBreak from '@/assets/clock.webp';
 import { categoryMeta, type FaqCategory, faqs } from '@/data/faqs';
+import { links } from '@/data/links';
 import { useMemo } from 'react';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
 import styles from './Footer.module.scss';
@@ -61,12 +62,12 @@ function Footer() {
         <p>Made with &lt;3 by the WildHacks Team</p>
         <div className={styles.footer__socialContainer}>
           <a
-            href='https://www.linkedin.com/company/wildhacks/'
+            href={links.social.linkedin}
             className={styles.footer__socialButton}>
             <FaLinkedin size={24} />
           </a>
           <a
-            href='https://www.instagram.com/wildhacks/'
+            href={links.social.instagram}
             className={styles.footer__socialButton}>
             <FaInstagramSquare size={24} />
           </a>
