@@ -1,5 +1,6 @@
 import bookshelves from '@/assets/bookshelves.png';
 import { useGSAP } from '@gsap/react';
+import { Analytics } from '@vercel/analytics/react';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -36,6 +37,7 @@ function App() {
         {/* <Spacer height={200} /> */}
         <Footer />
       </SmoothLayout>
+      <Analytics />
     </>
   );
 }
