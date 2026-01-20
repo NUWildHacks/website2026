@@ -9,15 +9,18 @@
   align-items: flex-end;
   position: relative;
   top: -25rem;
+  margin-bottom: -25rem;
   padding: 12rem 2rem;
 
   @include sm-breakpoint {
     top: -48rem;
+    margin-bottom: -48rem;
     padding: 12rem 3rem;
   }
 
   @include md-breakpoint {
     top: -80rem;
+    margin-bottom: -80rem;
     padding: 12rem 6rem;
   }
 
