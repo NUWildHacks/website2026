@@ -1,0 +1,47 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  top: -25rem;
+  padding: 12rem 2rem;
+
+  @include sm-breakpoint {
+    top: -48rem;
+    padding: 12rem 3rem;
+  }
+
+  @include md-breakpoint {
+    top: -80rem;
+    padding: 12rem 6rem;
+  }
+
+  &__logo {
+    width: 15%;
+  }
+
+  &__heading {
+    font-size: 24px;
+    color: white;
+    @include sm-breakpoint {
+      font-size: 54px;
+    }
+  }
+
+  &__subtitle {
+    font-family: _.$font-sans;
+    font-size: 18px;
+    text-align: right;
+    color: white;
+    line-height: 150%;
+
+    a {
+      color: white;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 @use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
 
 .world {
   position: absolute;
@@ -26,5 +27,13 @@
 
   &__cloudBg {
     height: 450svh;
+  }
+  &__spacer {
+    background-color: #128684;
+    height: 160svh;
+
+    @include sm-breakpoint {
+      height: 300svh;
+    }
   }
 }

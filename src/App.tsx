@@ -1,3 +1,4 @@
+import bookshelves from '@/assets/bookshelves.png';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
@@ -11,6 +12,7 @@ import AboutContent from './features/about/AboutContent';
 import Footer from './features/footer/Footer';
 import HeroContent from './features/hero/HeroContent';
 import HeroScene from './features/hero/HeroScene';
+import Sponsors from './features/sponsors/Sponsors';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollSmoother, SplitText);
 
@@ -23,7 +25,9 @@ function App() {
       <Spacer height={45} />
       <AboutContent />
       <AboutLastYear />
-      <Spacer height={200} />
+      <img src={bookshelves} style={{ width: '100%', margin: '128px 0' }} />
+      <Sponsors />
+      {/* <Spacer height={200} /> */}
       <Footer />
     </SmoothLayout>
   );

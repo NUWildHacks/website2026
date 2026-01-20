@@ -1,5 +1,6 @@
 import clockBg from '@/assets/clock_bg.png';
 import cloudBg from '@/assets/cloud_bg.webp';
+
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
@@ -28,8 +29,8 @@ export const World = () => {
     <div className={styles.world} ref={worldRef}>
       <div className={styles.world__mover} ref={moverRef}>
         <img src={cloudBg} ref={cloudsRef} className={styles.world__cloudBg} />
-        <div style={{ backgroundColor: '#128684', height: '250svh' }} />
-        <img src={clockBg} ref={clockRef} />
+        <div className={styles.world__spacer} />
+        <img src={clockBg} ref={clockRef} className={styles.world__clockBg} />
       </div>
     </div>
   );

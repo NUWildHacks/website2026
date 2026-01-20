@@ -1,0 +1,91 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.sponsors {
+  width: 100%;
+  margin-top: 4rem;
+  justify-items: center;
+
+  &__left {
+    position: absolute;
+    display: none;
+
+    @include sm-breakpoint {
+      display: block;
+      width: 12rem;
+      left: 4rem;
+      top: 40rem;
+    }
+
+    @include md-breakpoint {
+      display: block;
+      width: 24rem;
+      left: 8rem;
+      top: 46rem;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    display: none;
+
+    @include sm-breakpoint {
+      display: block;
+      width: 12rem;
+      right: 4rem;
+      bottom: 6rem;
+    }
+
+    @include md-breakpoint {
+      display: block;
+      width: 20rem;
+      right: 8rem;
+      bottom: 0.5rem;
+    }
+  }
+
+  &__card {
+    background-color: white;
+    padding: 8rem 3.5rem;
+    min-height: 600px;
+
+    width: 100%;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border: 1px solid #098987;
+    text-align: center;
+    align-content: center;
+
+    @include sm-breakpoint {
+      width: 80%;
+    }
+  }
+
+  &__cta {
+    margin-top: 8rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    @include md-breakpoint {
+      font-size: 3.75rem;
+    }
+  }
+
+  &__body {
+    font-family: _.$font-sans;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    padding: 2rem 0;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+
+    @include md-breakpoint {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
