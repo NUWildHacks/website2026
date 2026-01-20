@@ -38,13 +38,17 @@
 
   &__subtitle {
     font-family: _.$font-sans;
-    font-size: 18px;
+    font-size: 16px;
     text-align: right;
     color: white;
     line-height: 150%;
 
     a {
       color: white;
+    }
+
+    @include sm-breakpoint {
+      font-size: 24px;
     }
   }
 }

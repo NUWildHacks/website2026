@@ -203,7 +203,7 @@ function AboutLastYear() {
         </div>
 
         {/* D */}
-        <div className={styles.block}>
+        <div className={styles.block__final}>
           <div ref={copyDRef} className={styles.copyFinal}>
             We’ll provide the food, you bring the energy.<br />Happy hacking!
           </div>
