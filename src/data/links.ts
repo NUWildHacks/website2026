@@ -4,7 +4,7 @@ export const links = {
   sponsors: '#sponsors',
   faq: '#faq',
   register: {
-    participant: 'https://dashboard-2026.vercel.app/registration/', // TODO: Update with actual registration link
+    participant: 'https://dashboard.wildhacks.net/registration/', // TODO: Update with actual registration link
     judge:
       'https://docs.google.com/forms/d/e/1FAIpQLScyJ4OXjGQOlXSNj-nAZzdcXA1eQWc1URs2fsVpe2dahjlzXw/viewform',
   },
