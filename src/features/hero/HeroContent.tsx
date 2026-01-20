@@ -1,6 +1,7 @@
 import logo from '@/assets/logo-full.svg';
 import mlhLogo from '@/assets/mlh-logo-white.svg';
 import Button from '@/components/ui/Button';
+import { links } from '@/data/links';
 import { useRef } from 'react';
 import styles from './HeroContent.module.scss';
 
@@ -24,7 +25,9 @@ function HeroContent() {
               In-person event @ Evanston, IL
             </span>
           </div>
-          <Button href='#' target='_blank'>Register</Button>
+          <Button href={links.register.participant} target='_blank'>
+            Register
+          </Button>
         </div>
       </div>
     </div>

@@ -60,6 +60,7 @@
     width: 100%;
     color: white;
     justify-items: center;
+    text-align: center;
 
     padding: 2rem 0;
   }
@@ -77,5 +78,19 @@
 
   a {
     color: white;
+  }
+
+  &__cocLink {
+    background: none;
+    border: none;
+    color: white;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }

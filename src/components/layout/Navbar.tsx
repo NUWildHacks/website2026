@@ -54,19 +54,19 @@ function Navbar() {
       <div className={styles.navbar__content}>
         <a
           href={links.about}
-          className={styles.navbar__link}
+          className={styles.navbar__link__desktop}
           onClick={(e) => handleNavClick(e, '#about')}>
           About
         </a>
         <a
           href={links.sponsors}
-          className={styles.navbar__link}
+          className={styles.navbar__link__desktop}
           onClick={(e) => handleNavClick(e, '#sponsors')}>
           Sponsors
         </a>
         <a
           href={links.faq}
-          className={styles.navbar__link}
+          className={styles.navbar__link__desktop}
           onClick={(e) => handleNavClick(e, '#faq')}>
           FAQ
         </a>

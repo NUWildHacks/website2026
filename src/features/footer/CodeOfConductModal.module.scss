@@ -1,0 +1,130 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: #102a2a;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  &__closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__tldr {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-style: italic;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    border-left: 3px solid _.$clr-button-light;
+  }
+
+  &__content {
+    padding: 2rem;
+    overflow-y: auto;
+    color: white;
+
+    @include sm-breakpoint {
+      padding: 2.5rem;
+    }
+
+    h1 {
+      font-family: _.$font-serif;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      padding-right: 2rem;
+      color: white;
+
+      @include sm-breakpoint {
+        font-size: 2.25rem;
+      }
+    }
+
+    h2 {
+      font-family: _.$font-sans;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: _.$clr-button-light;
+
+      @include sm-breakpoint {
+        font-size: 1.25rem;
+      }
+    }
+
+    p {
+      font-family: _.$font-sans;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    ul {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+
+      li {
+        font-family: _.$font-sans;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+        color: rgba(255, 255, 255, 0.85);
+      }
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
+      transition: color 0.2s;
+
+      &:hover {
+        color: _.$clr-button-dark;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}

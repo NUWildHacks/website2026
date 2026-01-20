@@ -1,8 +1,9 @@
 import ClockBreak from '@/assets/clock.webp';
 import { categoryMeta, type FaqCategory, faqs } from '@/data/faqs';
 import { links } from '@/data/links';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { FaInstagramSquare, FaLinkedin } from 'react-icons/fa';
+import CodeOfConductModal from './CodeOfConductModal';
 import styles from './Footer.module.scss';
 import ToggleQuestion from './ToggleQuestion';
 
@@ -14,6 +15,8 @@ const categoryOrder: FaqCategory[] = [
 ];
 
 function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const grouped = useMemo(() => {
     const sorted = [...faqs].sort((a, b) =>
       (a.order ?? 999) - (b.order ?? 999)
@@ -60,6 +63,14 @@ function Footer() {
 
       <div className={styles.footer__teamContainer}>
         <p>Made with &lt;3 by the WildHacks Team</p>
+        <button
+          className={styles.footer__cocLink}
+          onClick={() => setIsModalOpen(true)}>
+          MLH Code of Conduct
+        </button>
+        <CodeOfConductModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)} />
         <div className={styles.footer__socialContainer}>
           <a
             href={links.social.linkedin}
