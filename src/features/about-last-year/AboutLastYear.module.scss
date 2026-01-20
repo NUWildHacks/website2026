@@ -1,4 +1,5 @@
 @use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
 
 .timeline {
   position: relative;
@@ -17,7 +18,13 @@
 
 .block {
   display: flex;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 5rem;
+
+  @include md-breakpoint {
+    flex-direction: row;
+    gap: 1.25rem;
+  }
 }
 
 .image {
@@ -52,7 +59,10 @@
     justify-content: center;
     align-content: flex-end;
     flex: 1;
-    padding-top: 24rem;
+
+    @include md-breakpoint {
+      padding-top: 24rem;
+    }
   }
 
   &__B {
@@ -67,32 +77,40 @@
     justify-content: center;
     align-content: flex-end;
     flex: 1;
-    padding-top: 12rem;
+    @include md-breakpoint {
+      padding-top: 12rem;
+    }
   }
 }
 
 .copy {
   color: white;
-  font-size: 1.75rem;
+  font-size: 24px;
   line-height: 1.35;
 
   flex: 1;
   color: white;
   max-width: 50%;
   font-family: _.$font-sans;
+
+  @include sm-breakpoint {
+    font-size: 1.75rem;
+  }
 }
 
 .copyFinal {
   color: white;
-  font-size: 2.8rem;
+  font-size: 1.8rem;
   line-height: 1.35;
   text-align: center;
   width: 100%;
+
+  @include md-breakpoint {
+    font-size: 2.8rem;
+  }
 }
 
 .stat {
-  color: white;
-  font-size: 1.1rem;
   &__A {
     position: relative;
     text-align: right;
@@ -100,6 +118,11 @@
     top: -1rem;
     color: white;
     font-size: 1.25rem;
+    display: none;
+
+    @include md-breakpoint {
+      display: block;
+    }
   }
 
   &__topB {
@@ -109,6 +132,11 @@
     top: 1rem;
     color: white;
     font-size: 1.25rem;
+    display: none;
+
+    @include md-breakpoint {
+      display: block;
+    }
   }
 
   &__bottomB {
@@ -118,6 +146,11 @@
     top: -1rem;
     color: white;
     font-size: 1.25rem;
+    display: none;
+
+    @include md-breakpoint {
+      display: block;
+    }
   }
 
   &__C {
@@ -126,5 +159,10 @@
     bottom: 1rem;
     color: white;
     font-size: 1.25rem;
+    display: none;
+
+    @include md-breakpoint {
+      display: block;
+    }
   }
 }
