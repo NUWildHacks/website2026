@@ -65,14 +65,18 @@
   }
 
   &__title {
-    font-size: 2rem;
+    font-size: 24px;
     @include md-breakpoint {
-      font-size: 3.75rem;
+      font-size: 54px;
     }
   }
 
   &__body {
     font-family: _.$font-sans;
+    font-size: 16px;
+    @include md-breakpoint {
+      font-size: 24px;
+    }
   }
 
   &__buttons {

@@ -13,7 +13,11 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 12rem;
+  gap: 4rem;
+
+  @include md-breakpoint {
+    gap: 12rem;
+  }
 }
 
 .block {
@@ -24,6 +28,20 @@
   @include md-breakpoint {
     flex-direction: row;
     gap: 1.25rem;
+  }
+
+  &__final {
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    @include md-breakpoint {
+      flex-direction: row;
+      gap: 1.25rem;
+    }
   }
 }
 
@@ -100,13 +118,14 @@
 
 .copyFinal {
   color: white;
-  font-size: 1.8rem;
+  font-size: 24px;
   line-height: 1.35;
   text-align: center;
-  width: 100%;
+  width: 80%;
 
   @include sm-breakpoint {
     font-size: 54px;
+    width: 100%;
   }
 }
 
