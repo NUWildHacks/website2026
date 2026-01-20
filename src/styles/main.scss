@@ -2,8 +2,26 @@
 @use 'variables' as _;
 @use 'mixins';
 
-html {
-  scroll-behavior: smooth;
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
 }
 
 ::-webkit-scrollbar {
