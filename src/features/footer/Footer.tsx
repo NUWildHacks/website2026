@@ -78,12 +78,14 @@ function Footer() {
           <a
             href={links.social.linkedin}
             className={styles.footer__socialButton}
+            target='_blank'
             aria-label='Go to WildHacks LinkedIn Page'>
             <FaLinkedin size={24} />
           </a>
           <a
             href={links.social.instagram}
             className={styles.footer__socialButton}
+            target='_blank'
             aria-label='Go to WildHacks Instagram Page'>
             <FaInstagramSquare size={24} />
           </a>
