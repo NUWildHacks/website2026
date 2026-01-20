@@ -1,0 +1,61 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.toggleQuestion {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &__header {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__question {
+    font-size: 16px;
+    color: white;
+    text-transform: none;
+
+    @include sm-breakpoint {
+      font-size: 24px;
+    }
+  }
+
+  &__icon {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease;
+
+    &--open {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      line-height: 1.6;
+      font-family: _.$font-sans;
+
+      @include sm-breakpoint {
+        font-size: 16px;
+      }
+    }
+
+    &--open {
+      max-height: 500px;
+      padding-bottom: 1rem;
+    }
+  }
+}

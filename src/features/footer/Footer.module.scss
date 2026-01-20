@@ -1,11 +1,55 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
 .footer {
-  height: 110svh;
+  min-height: 110svh;
   width: 100%;
   background-color: #102a2a;
+  padding: 12rem 2rem;
+
+  @include sm-breakpoint {
+    padding: 12rem 3rem;
+  }
+
+  @include md-breakpoint {
+    padding: 12rem 6rem;
+  }
 
   &__heading {
-    font-size: 23vw;
-    text-align: center;
+    font-size: 24px;
     color: white;
+    width: 100%;
+    text-align: left;
+
+    @include sm-breakpoint {
+      font-size: 54px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 56px 56px;
+
+    @include md-breakpoint {
+      grid-template-columns: 1fr 1fr; // desktop = 2x2
+    }
+  }
+
+  &__cell {
+    min-width: 0;
+  }
+
+  &__meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin: 18px 0;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  &__slug {
+    color: rgba(255, 255, 255, 0.55);
   }
 }
