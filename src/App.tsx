@@ -6,6 +6,7 @@ import { SplitText } from 'gsap/SplitText';
 import { SmoothLayout } from './components/layout/SmoothLayout';
 import { World } from './components/scene/World';
 import { Spacer } from './components/ui/Spacer';
+import AboutLastYear from './features/about-last-year/AboutLastYear';
 import AboutContent from './features/about/AboutContent';
 import Footer from './features/footer/Footer';
 import HeroContent from './features/hero/HeroContent';
@@ -21,6 +22,7 @@ function App() {
       <HeroContent />
       <Spacer height={45} />
       <AboutContent />
+      <AboutLastYear />
       <Spacer height={200} />
       <Footer />
     </SmoothLayout>
