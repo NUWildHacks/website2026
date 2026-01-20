@@ -13,8 +13,13 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx}": ["eslint --fix", "dprint fmt"],
-    "**/*.{json,scss,html}": ["dprint fmt"]
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "dprint fmt"
+    ],
+    "**/*.{json,scss,html}": [
+      "dprint fmt"
+    ]
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -24,6 +29,7 @@
     "gsap": "^3.14.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-icons": "^5.5.0",
     "three": "^0.182.0"
   },
   "devDependencies": {
