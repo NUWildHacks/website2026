@@ -1,4 +1,4 @@
-import bookshelves from '@/assets/bookshelves.png';
+import bookshelves from '@/assets/bookshelves.webp';
 import { useGSAP } from '@gsap/react';
 import { Analytics } from '@vercel/analytics/react';
 import gsap from 'gsap';

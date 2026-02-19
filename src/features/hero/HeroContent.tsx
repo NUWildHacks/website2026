@@ -1,54 +1,53 @@
 import logo from '@/assets/logo-full.svg';
 import mlhLogo from '@/assets/mlh-logo-white.svg';
 import Button from '@/components/ui/Button';
-import Input from '@/components/ui/input';
+// import Input from '@/components/ui/input';
 import { links } from '@/data/links';
-import supabase from '@/utils/supabase';
-import { Toast } from 'radix-ui';
-import { useRef, useState } from 'react';
+// import supabase from '@/utils/supabase';
+import { useRef } from 'react';
 import styles from './HeroContent.module.scss';
 
 function HeroContent() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<
-    'idle' | 'loading' | 'success' | 'error'
-  >('idle');
-  const [message, setMessage] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [status, setStatus] = useState<
+  //   'idle' | 'loading' | 'success' | 'error'
+  // >('idle');
+  // const [message, setMessage] = useState('');
 
-  const isValidEmail = (email: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // const isValidEmail = (email: string) =>
+  //   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  const handleSubscribe = async () => {
-    if (!isValidEmail(email)) {
-      setStatus('error');
-      setMessage('Please enter a valid email');
-      return;
-    }
+  // const handleSubscribe = async () => {
+  //   if (!isValidEmail(email)) {
+  //     setStatus('error');
+  //     setMessage('Please enter a valid email');
+  //     return;
+  //   }
 
-    setStatus('loading');
+  //   setStatus('loading');
 
-    const { data: existing } = await supabase.from('newsletter').select('email')
-      .eq('email', email);
+  //   const { data: existing } = await supabase.from('newsletter').select('email')
+  //     .eq('email', email);
 
-    if (existing?.length) {
-      setStatus('error');
-      setMessage('This email is already subscribed');
-      return;
-    }
+  //   if (existing?.length) {
+  //     setStatus('error');
+  //     setMessage('This email is already subscribed');
+  //     return;
+  //   }
 
-    // Insert new subscriber
-    const { error } = await supabase.from('newsletter').insert({ email });
+  //   // Insert new subscriber
+  //   const { error } = await supabase.from('newsletter').insert({ email });
 
-    if (error) {
-      setStatus('error');
-      setMessage('Something went wrong');
-      return;
-    }
+  //   if (error) {
+  //     setStatus('error');
+  //     setMessage('Something went wrong');
+  //     return;
+  //   }
 
-    setStatus('success');
-    setMessage('Successfully subscribed!');
-    setEmail('');
-  };
+  //   setStatus('success');
+  //   setMessage('Successfully subscribed!');
+  //   setEmail('');
+  // };
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -77,7 +76,8 @@ function HeroContent() {
             Register
           </Button>
         </div>
-        <div>
+        {
+          /* <div>
           <span>
             Keep up to date with news
           </span>
@@ -91,11 +91,9 @@ function HeroContent() {
             {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </Button>
           {message && <p>{message}</p>}
-        </div>
+        </div> */
+        }
       </div>
-      <Toast.Root>
-        <Toast.Description>Saved!</Toast.Description>
-      </Toast.Root>
     </div>
   );
 }
