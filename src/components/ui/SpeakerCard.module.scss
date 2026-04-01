@@ -1,0 +1,122 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.card {
+  perspective: 1000px;
+  height: 70svh;
+  width: 100%;
+
+  container-type: inline-size;
+  @include sm-breakpoint {
+    height: 70svh;
+    width: 52svh;
+  }
+
+  &__flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+
+    box-shadow: 10px 10px 130px 0px rgba(0, 0, 0, 0.21);
+    -webkit-box-shadow: 10px 10px 130px 0px rgba(0, 0, 0, 0.21);
+    -moz-box-shadow: 10px 10px 130px 0px rgba(0, 0, 0, 0.21);
+  }
+
+  &:hover &__flipper {
+    transform: rotateY(180deg);
+  }
+
+  &__front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+
+  &__back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  &__side {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.8rem;
+  }
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    @include sm-breakpoint {
+      border: 0.2rem solid _.$clr-bg-base;
+      border-radius: 0.6rem;
+      padding: 3em;
+      gap: 3em;
+    }
+  }
+
+  &__image {
+    border-radius: 1rem;
+    width: 100%;
+    height: 0;
+    min-height: 0;
+    flex: 1;
+    object-fit: cover;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+
+    &__name {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      line-height: 1;
+
+      @include sm-breakpoint {
+        font-size: 3.6rem;
+      }
+    }
+
+    &__subtitle {
+      font-family: _.$font-sans;
+      text-transform: uppercase;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+
+      font-size: 1rem;
+
+      @include sm-breakpoint {
+        font-size: inherit;
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__blurb {
+    font-family: _.$font-sans;
+
+    font-size: clamp(0.875rem, 3cqw, 1.125rem);
+  }
+}

@@ -1,4 +1,4 @@
-@use '@/styles/mixins';
+@use '@/styles/mixins' as *;
 
 .about {
   display: flex;
@@ -26,7 +26,7 @@
     text-transform: uppercase;
     font-size: 24px;
 
-    @include mixins.sm-breakpoint {
+    @include sm-breakpoint {
       font-size: 54px;
     }
   }
