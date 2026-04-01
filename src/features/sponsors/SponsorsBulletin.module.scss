@@ -88,11 +88,12 @@
     }
   }
 
-  /* &__logo { */
-  /* transition: 0.2s transform ease; */
+  &__logo {
+    border-radius: 0.6rem;
+    /* transition: 0.2s transform ease; */
 
-  /* &:hover { */
-  /* transform: translateY(-0.4rem); */
-  /* } */
-  /* } */
+    /* &:hover { */
+    /* transform: translateY(-0.4rem); */
+    /* } */
+  }
 }
