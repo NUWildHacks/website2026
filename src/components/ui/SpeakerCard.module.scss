@@ -24,8 +24,16 @@
     -moz-box-shadow: 10px 10px 130px 0px rgba(0, 0, 0, 0.21);
   }
 
-  &:hover &__flipper {
-    transform: rotateY(180deg);
+  @media (hover: hover) {
+    &:hover &__flipper {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @media (hover: none) {
+    &--flipped &__flipper {
+      transform: rotateY(180deg);
+    }
   }
 
   &__front {

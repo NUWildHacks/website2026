@@ -33,10 +33,19 @@
   &--top-center {
     position: fixed;
     top: 2rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: fit-content;
+    left: 1rem;
+    right: 80px;
+    width: auto;
+    margin: 0;
+    font-size: 0.8rem;
+
+    @include sm-breakpoint {
+      left: 0;
+      right: 0;
+      width: fit-content;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
   }
 
   &--top-right {
