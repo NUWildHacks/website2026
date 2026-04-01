@@ -30,8 +30,8 @@ function AboutContent() {
     <div id='about' className={styles.about} ref={containerRef}>
       <div className={styles.about__background}>
         <p className={styles.about__text} ref={textRef}>
-          Tick... tock... time is running out to register for WildHacks,
-          Northwestern’s largest hackathon on April 11-12, 2026!
+          Northwestern's biggest hackathon is back &mdash; we can't wait to see
+          you at WildHacks on April 11-12, 2026!
         </p>
       </div>
     </div>
