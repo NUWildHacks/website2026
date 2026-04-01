@@ -70,7 +70,7 @@ function SponsorsBulletin() {
       </div>
 
       <div className={styles.sponsors__card}>
-        <div></div>
+        <div className={'blank'}></div>
         <div className={styles.sponsors__card__inner}>
           {sponsors.map((s, idx) => (
             <a href={'https://www.' + s.url} target='_blank'>
