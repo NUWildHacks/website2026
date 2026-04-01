@@ -1,6 +1,7 @@
 import logo from '@/assets/logo-full.svg';
 import mlhLogo from '@/assets/mlh-logo-white.svg';
 import Button from '@/components/ui/Button';
+import Toast from '@/components/ui/Toast';
 import { links } from '@/data/links';
 import { useRef } from 'react';
 import styles from './HeroContent.module.scss';
@@ -10,6 +11,12 @@ function HeroContent() {
   const contentRef = useRef<HTMLDivElement>(null);
   return (
     <div className={styles.hero} ref={sectionRef}>
+      <div className={styles.hero__toast}>
+        <Toast
+          text='Our keynote speaker is live &mdash; '
+          href='#keynote'
+          actionName='check it out here' />
+      </div>
       <div ref={contentRef}>
         <div className={styles.hero__mlh}>
           <img src={mlhLogo} alt='MLH logo' />
@@ -29,7 +36,7 @@ function HeroContent() {
             </span>
           </div>
           <Button href={links.register.participant} target='_blank'>
-            Register
+            Dashboard
           </Button>
         </div>
       </div>

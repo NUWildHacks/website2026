@@ -1,5 +1,5 @@
 @use '@/styles/variables' as _;
-@use '@/styles/mixins';
+@use '@/styles/mixins' as *;
 
 .hero {
   display: flex;
@@ -25,7 +25,7 @@
     -ms-user-select: none;
     user-select: none;
 
-    @include mixins.sm-breakpoint {
+    @include sm-breakpoint {
       width: 70vw;
     }
   }
@@ -46,7 +46,7 @@
     flex-direction: column;
     gap: 15px;
 
-    @include mixins.sm-breakpoint {
+    @include sm-breakpoint {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -55,6 +55,17 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
+    }
+  }
+
+  &__toast {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: calc(90vw - 6rem);
+
+    @include sm-breakpoint {
+      width: auto;
     }
   }
 }

@@ -75,13 +75,6 @@ function Navbar() {
         </a>
 
         <a
-          href={links.register.participant}
-          className={styles.navbar__link}
-          target='_blank'
-          rel='noopener noreferrer'>
-          Register
-        </a>
-        <a
           href={links.dashboard}
           className={styles.navbar__link}
           target='_blank'
