@@ -1,6 +1,6 @@
-import doordashTable from '@/assets/doordash-table.png';
-import openingCeremony from '@/assets/opening-ceremony.png';
-import wildhacks2025 from '@/assets/wildhacks-2025.gif';
+import doordashTable from '@/assets/doordash-table.webp';
+import openingCeremony from '@/assets/opening-ceremony.webp';
+import wildhacks2025 from '@/assets/wildhacks-2025.mp4';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -19,7 +19,7 @@ function AboutLastYear() {
   const imgBRef = useRef<HTMLImageElement>(null);
   const statBRef = useRef<HTMLDivElement>(null);
 
-  const imgCRef = useRef<HTMLImageElement>(null);
+  const imgCRef = useRef<HTMLVideoElement>(null);
   const statCRef = useRef<HTMLDivElement>(null);
   const copyCRef = useRef<HTMLDivElement>(null);
 
@@ -188,11 +188,15 @@ function AboutLastYear() {
         <div className={styles.block}>
           <div className={styles.imageBlock}>
             <div ref={statCRef} className={styles.stat__C}>57 universities</div>
-            <img
+            <video
               ref={imgCRef}
               className={styles.image__C}
               src={wildhacks2025}
-              alt='WildHacks 2025 dinner timelapse gif' />
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-label='WildHacks 2025 dinner timelapse' />
           </div>
           <div className={styles.copyContainer__C}>
             <div ref={copyCRef} className={styles.copy}>
