@@ -9,7 +9,7 @@ import imcLogo from '@/assets/sponsors/imc.png';
 import menolearnLogo from '@/assets/sponsors/menolearn.png';
 import nuCsLogo from '@/assets/sponsors/nu-cs.jpg';
 import pureButtonsLogo from '@/assets/sponsors/pure_buttons.png';
-import redBullLogo from '@/assets/sponsors/red_bull.png';
+// import redBullLogo from '@/assets/sponsors/red_bull.png';
 import garageLogo from '@/assets/sponsors/the_garage.png';
 
 const sponsors = [
@@ -48,11 +48,11 @@ const sponsors = [
     url: 'purebuttons.com',
     image: pureButtonsLogo,
   },
-  {
-    name: 'Red Bull',
-    url: 'redbull.com',
-    image: redBullLogo,
-  },
+  // {
+  //   name: 'Red Bull',
+  //   url: 'redbull.com',
+  //   image: redBullLogo,
+  // },
   {
     name: 'The Garage at Northwestern',
     url: 'thegarage.northwestern.edu',
