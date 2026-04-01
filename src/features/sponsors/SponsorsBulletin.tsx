@@ -73,9 +73,8 @@ function SponsorsBulletin() {
         <div className={'blank'}></div>
         <div className={styles.sponsors__card__inner}>
           {sponsors.map((s, idx) => (
-            <a href={'https://www.' + s.url} target='_blank'>
+            <a href={'https://www.' + s.url} target='_blank' key={idx}>
               <img
-                key={idx}
                 src={s.image}
                 alt={s.name + ' logo'}
                 title={s.name}
