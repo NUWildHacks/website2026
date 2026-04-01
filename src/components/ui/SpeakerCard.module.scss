@@ -3,19 +3,19 @@
 
 .card {
   perspective: 1000px;
-  height: 70svh;
+  min-height: var(--card-min-height, 60svh);
   width: 100%;
 
   container-type: inline-size;
   @include sm-breakpoint {
-    height: 70svh;
     width: 52svh;
   }
 
   &__flipper {
-    position: relative;
+    display: grid;
+    grid-template: auto / 1fr;
+    min-height: inherit;
     width: 100%;
-    height: 100%;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
 
@@ -24,8 +24,16 @@
     -moz-box-shadow: 10px 10px 130px 0px rgba(0, 0, 0, 0.21);
   }
 
-  &:hover &__flipper {
-    transform: rotateY(180deg);
+  @media (hover: hover) {
+    &:hover &__flipper {
+      transform: rotateY(180deg);
+    }
+  }
+
+  @media (hover: none) {
+    &--flipped &__flipper {
+      transform: rotateY(180deg);
+    }
   }
 
   &__front {
@@ -42,8 +50,8 @@
   }
 
   &__side {
-    position: absolute;
-    inset: 0;
+    grid-column: 1;
+    grid-row: 1;
     backface-visibility: hidden;
 
     background-color: white;
@@ -73,10 +81,11 @@
   &__image {
     border-radius: 1rem;
     width: 100%;
-    height: 0;
-    min-height: 0;
+    aspect-ratio: 3 / 4;
     flex: 1;
+    min-height: 0;
     object-fit: cover;
+    object-position: top center;
   }
 
   &__heading {
@@ -86,12 +95,12 @@
     gap: 1em;
 
     &__name {
-      font-size: 2.2rem;
+      font-size: 2rem;
       text-transform: uppercase;
       line-height: 1;
 
       @include sm-breakpoint {
-        font-size: 3.6rem;
+        font-size: 3rem;
       }
     }
 

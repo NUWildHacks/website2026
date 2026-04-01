@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styles from './SpeakerCard.module.scss';
 
 type SpeakerCardProps = {
@@ -6,13 +7,23 @@ type SpeakerCardProps = {
   headshot: string;
   title: string;
   blurb: string;
+  minHeight?: string;
 };
 
 const SpeakerCard = (
-  { name, type, headshot, title, blurb }: SpeakerCardProps,
+  { name, type, headshot, title, blurb, minHeight }: SpeakerCardProps,
 ) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   return (
-    <div className={styles.card}>
+    <div
+      className={`${styles.card}${
+        isFlipped ? ` ${styles['card--flipped']}` : ''
+      }`}
+      style={minHeight
+        ? { '--card-min-height': minHeight } as React.CSSProperties
+        : undefined}
+      onClick={() => setIsFlipped(f => !f)}>
       <div className={styles.card__flipper}>
         <div className={`${styles.card__side} ${styles.card__front}`}>
           <div className={styles.card__inner}>

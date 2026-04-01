@@ -4,17 +4,27 @@ import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { useRef, useState } from 'react';
 import styles from './Toast.module.scss';
 
+type Position =
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right';
+
 type ToastProps = {
   text: string;
   href: string;
   actionName: string;
+  position?: Position;
 };
 
 const Toast = (
-  { text, href, actionName }: ToastProps,
+  { text, href, actionName, position }: ToastProps,
 ) => {
   const [isDismissed, setIsDismissed] = useState(false);
   const toastRef = useRef<HTMLDivElement>(null);
+  const yOffset = position?.startsWith('bottom') ? 50 : -50;
 
   const handleActionClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     handleDismiss();
@@ -29,7 +39,7 @@ const Toast = (
 
   const handleDismiss = () => {
     gsap.to(toastRef.current, {
-      y: -50,
+      y: yOffset,
       opacity: 0,
       duration: 0.4,
       ease: 'power3.in',
@@ -39,7 +49,7 @@ const Toast = (
 
   useGSAP(() => {
     gsap.from(toastRef.current, {
-      y: -50,
+      y: yOffset,
       opacity: 0,
       delay: 0.6,
       duration: 0.6,
@@ -49,7 +59,11 @@ const Toast = (
 
   if (isDismissed) return null;
   return (
-    <div ref={toastRef} className={styles.toast}>
+    <div
+      ref={toastRef}
+      className={`${styles.toast}${
+        position ? ` ${styles[`toast--${position}`]}` : ''
+      }`}>
       <svg
         className={styles.toast__icon}
         xmlns='http://www.w3.org/2000/svg'
