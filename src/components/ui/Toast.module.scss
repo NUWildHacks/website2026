@@ -24,6 +24,48 @@
     color: _.$clr-button-light;
   }
 
+  &--top-left {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  &--top-center {
+    position: fixed;
+    top: 2rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  &--top-right {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  &--bottom-left {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+  }
+
+  &--bottom-center {
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  &--bottom-right {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
   &__dismiss {
     position: absolute;
     top: -0.2rem;

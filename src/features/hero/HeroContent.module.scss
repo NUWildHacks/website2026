@@ -57,15 +57,4 @@
       gap: 5px;
     }
   }
-
-  &__toast {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    width: calc(90vw - 6rem);
-
-    @include sm-breakpoint {
-      width: auto;
-    }
-  }
 }
