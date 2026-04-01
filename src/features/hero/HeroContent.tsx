@@ -54,12 +54,11 @@ function HeroContent() {
 
   return (
     <div className={styles.hero} ref={sectionRef}>
-      <div className={styles.hero__toast}>
-        <Toast
-          text='Our keynote speaker is live &mdash; '
-          href='#keynote'
-          actionName='check it out here' />
-      </div>
+      <Toast
+        text='Our keynote speaker is live &mdash; '
+        href='#keynote'
+        actionName='check it out here'
+        position='top-center' />
       <div ref={contentRef}>
         <div className={styles.hero__mlh}>
           <img src={mlhLogo} alt='MLH logo' />
