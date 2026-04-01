@@ -14,6 +14,7 @@ import AboutContent from './features/about/AboutContent';
 import Footer from './features/footer/Footer';
 import HeroContent from './features/hero/HeroContent';
 import HeroScene from './features/hero/HeroScene';
+import Keynote from './features/keynote/Keynote';
 import Sponsors from './features/sponsors/Sponsors';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP, ScrollSmoother, SplitText);
@@ -33,6 +34,7 @@ function App() {
           src={bookshelves}
           style={{ width: '100%', margin: '128px 0' }}
           alt='cat sitting on top of bookshelf' />
+        <Keynote />
         <Sponsors />
         {/* <Spacer height={200} /> */}
         <Footer />

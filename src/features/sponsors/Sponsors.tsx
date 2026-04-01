@@ -25,7 +25,7 @@ function Sponsors() {
         Email us at{' '}
         <a href='mailto:wildhacks@northwestern.edu'>
           wildhacks@northwestern.edu
-        </a>
+        </a>.
       </p>
 
       <SponsorsBulletin />

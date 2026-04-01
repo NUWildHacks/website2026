@@ -8,19 +8,19 @@
   align-content: flex-end;
   align-items: flex-end;
   position: relative;
-  top: -25rem;
-  margin-bottom: -25rem;
+  /* top: -25rem; */
+  /* margin-bottom: -25rem; */
   padding: 12rem 2rem;
 
   @include sm-breakpoint {
-    top: -48rem;
-    margin-bottom: -48rem;
+    /* top: -48rem; */
+    /* margin-bottom: -48rem; */
     padding: 12rem 3rem;
   }
 
   @include md-breakpoint {
-    top: -80rem;
-    margin-bottom: -80rem;
+    /* top: -80rem; */
+    /* margin-bottom: -80rem; */
     padding: 12rem 6rem;
   }
 
@@ -29,7 +29,7 @@
   }
 
   &__heading {
-    font-size: 24px;
+    font-size: 48px;
     color: white;
     @include sm-breakpoint {
       font-size: 54px;
@@ -38,7 +38,7 @@
 
   &__subtitle {
     font-family: _.$font-sans;
-    font-size: 16px;
+    font-size: 20px;
     text-align: right;
     color: white;
     line-height: 150%;
@@ -47,8 +47,8 @@
       color: white;
     }
 
-    @include sm-breakpoint {
-      font-size: 24px;
-    }
+    /* @include sm-breakpoint { */
+    /* font-size: 20px; */
+    /* } */
   }
 }

@@ -1,0 +1,71 @@
+@use '@/styles/variables' as _;
+@use '@/styles/mixins' as *;
+
+.keynote {
+  display: flex;
+  align-items: center;
+  padding: 2.5rem 1.25rem;
+  height: 100svh;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  top: -30svh;
+  margin-bottom: -30svh;
+
+  @include md-breakpoint {
+    top: -40svh;
+    margin-bottom: -40svh;
+  }
+
+  @include lg-breakpoint {
+    top: -50svh;
+    margin-bottom: -50svh;
+  }
+
+  &__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  &__subtitle {
+    color: white;
+    text-transform: uppercase;
+    font-family: _.$font-sans;
+  }
+
+  &__title {
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    text-transform: uppercase;
+
+    @include sm-breakpoint {
+      font-size: 54px;
+    }
+  }
+
+  &__cards {
+    width: 100%;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
