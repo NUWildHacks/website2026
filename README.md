@@ -25,5 +25,6 @@ bun dev
 
 The site is deployed on **Vercel** under the `wildhacks@northwestern.edu` account.
 
-- **Production branch:** `launch`
-- Pushes to the `launch` branch automatically trigger a production deployment
+- **Production branch:** `main`
+- Pushes to the `main` branch automatically trigger a production deployment
+- Any changes to the `main` branch MUST be done through pull requests

@@ -1,4 +1,4 @@
-import clockBg from '@/assets/clock_bg.png';
+import clockBg from '@/assets/clock_bg.webp';
 import cloudBg from '@/assets/cloud_bg.webp';
 
 import { useGSAP } from '@gsap/react';
