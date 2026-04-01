@@ -1,26 +1,66 @@
+/* .world { */
+/* position: absolute; */
+/* top: 0; */
+/* left: 0; */
+/* width: 100%; */
+/* height: 100%; */
+/* z-index: -10; */
+/* pointer-events: none; */
+/* overflow: hidden; */
+
+/* &__mover { */
+/* width: 100%; */
+/* will-change: transform; */
+/* background-color: _.$clr-bg-base; */
+
+/* & > img { */
+/* width: 100%; */
+/* display: block; */
+/* will-change: transform; */
+/* min-height: 100%; */
+/* object-fit: cover; */
+/* } */
+/* } */
+
+/* &__cloudBg { */
+/* height: 450svh; */
+/* } */
+/* &__spacer { */
+/* background-color: #128684; */
+/* height: 280svh; */
+
+/* @include sm-breakpoint { */
+/* height: 310svh; */
+/* } */
+/* } */
+/* } */
+
 @use '@/styles/variables' as _;
 @use '@/styles/mixins' as *;
 
 .world {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: -10;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 
   &__mover {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
     width: 100%;
     will-change: transform;
     background-color: _.$clr-bg-base;
 
     & > img {
+      flex-shrink: 0;
       width: 100%;
       display: block;
       will-change: transform;
-      min-height: 100%;
       object-fit: cover;
     }
   }
@@ -28,12 +68,20 @@
   &__cloudBg {
     height: 450svh;
   }
+
   &__spacer {
     background-color: #128684;
-    height: 280svh;
+    width: 100%;
+    flex-grow: 1;
+    /* height: 280svh; */
+  }
+
+  &__clockBg {
+    object-position: top;
+    margin-bottom: calc(_.$footer-height * 2);
 
     @include sm-breakpoint {
-      height: 310svh;
+      margin-bottom: _.$footer-height;
     }
   }
 }

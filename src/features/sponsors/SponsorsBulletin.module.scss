@@ -9,6 +9,7 @@
   &__left {
     position: absolute;
     display: none;
+    pointer-events: none;
 
     @include sm-breakpoint {
       display: block;
@@ -19,6 +20,13 @@
 
     @include md-breakpoint {
       display: block;
+      width: 18rem;
+      left: 6rem;
+      top: 40rem;
+    }
+
+    @include lg-breakpoint {
+      display: block;
       width: 24rem;
       left: 8rem;
       top: 46rem;
@@ -28,6 +36,7 @@
   &__right {
     position: absolute;
     display: none;
+    pointer-events: none;
 
     @include sm-breakpoint {
       display: block;
@@ -45,8 +54,9 @@
   }
 
   &__card {
+    border-radius: 1rem;
     background-color: white;
-    padding: 8rem 3.5rem;
+    padding: 3.5rem;
     min-height: 600px;
 
     width: 100%;
@@ -55,41 +65,35 @@
     text-align: center;
     align-content: center;
 
+    display: grid;
+
     @include sm-breakpoint {
-      width: 80%;
+      padding: 8rem 3.5rem;
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include lg-breakpoint {
+      width: 90%;
+    }
+
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2em;
+
+      @include lg-breakpoint {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
     }
   }
 
-  &__cta {
-    margin-top: 8rem;
-  }
+  &__logo {
+    border-radius: 0.6rem;
+    /* transition: 0.2s transform ease; */
 
-  &__title {
-    font-size: 24px;
-    @include md-breakpoint {
-      font-size: 54px;
-    }
-  }
-
-  &__body {
-    font-family: _.$font-sans;
-    font-size: 16px;
-    @include md-breakpoint {
-      font-size: 24px;
-    }
-  }
-
-  &__buttons {
-    width: 100%;
-    display: flex;
-    padding: 2rem 0;
-    gap: 1rem;
-    justify-content: center;
-    flex-direction: column;
-
-    @include md-breakpoint {
-      flex-direction: row;
-      gap: 2rem;
-    }
+    /* &:hover { */
+    /* transform: translateY(-0.4rem); */
+    /* } */
   }
 }
