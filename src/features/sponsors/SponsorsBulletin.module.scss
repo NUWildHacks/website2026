@@ -63,9 +63,8 @@
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     border: 1px solid #098987;
     text-align: center;
-    align-content: center;
-
     display: grid;
+    align-content: center;
 
     @include sm-breakpoint {
       padding: 8rem 3.5rem;
@@ -86,6 +85,12 @@
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
+  }
+
+  a:has(&__logo) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__logo {
