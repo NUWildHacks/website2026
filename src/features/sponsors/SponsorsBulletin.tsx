@@ -6,7 +6,6 @@ import appifexLogo from '@/assets/sponsors/appifex_ai.svg';
 import claudeLogo from '@/assets/sponsors/claude.png';
 import hrtLogo from '@/assets/sponsors/hrt.svg';
 import imcLogo from '@/assets/sponsors/imc.png';
-import menolearnLogo from '@/assets/sponsors/menolearn.png';
 import nuCsLogo from '@/assets/sponsors/nu-cs.jpg';
 import pureButtonsLogo from '@/assets/sponsors/pure_buttons.png';
 // import redBullLogo from '@/assets/sponsors/red_bull.png';
@@ -32,11 +31,6 @@ const sponsors = [
     name: 'IMC Trading',
     url: 'imc.com',
     image: imcLogo,
-  },
-  {
-    name: 'Menolearn',
-    url: 'menolearn.com',
-    image: menolearnLogo,
   },
   {
     name: 'Northwestern Computer Science',
